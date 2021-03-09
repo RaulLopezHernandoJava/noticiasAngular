@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="row cajacreacion">
+    <h5>Crear Noticia</h5>
+    <button type="button" routerLink="/formulario" class="btn btn-outline-dark">Añadir Noticia</button>
+</div>
+
+
+<div class="contenedorNoticias" *ngFor="let noticia of noticias">
+    <div class="card card-styles">
+        <div class="card-body">
+            <div class="card-image">
+                <img class="card-img-top" src="{{noticia.imagen}}" alt="Card image cap">
+            </div>
+            <div class="card-text">
+                <h5 class="card-title">{{noticia.titulo}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Fecha de Publicacion {{noticia.fecha}}</h6>
+            </div>
+            <div class="card-button">
+                <button type="button" routerLink="/detalle/detalleNoticia/{{noticia.id}}" class="btn btn-outline-dark">Detalle Noticia</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,36 @@
+{
+    "noticias": [{
+            "id": 1,
+            "titulo": "La Cepa Britanica Al Alza",
+            "imagen": "https://fotos01.deia.eus/mmp/2021/03/09/690x278/cepa-britanica-euskadi.jpeg",
+            "fecha": "2021-03-09",
+            "textoCortoNoticia": "La cepa británica representa ya el 50 % de los positivos en Euskadi",
+            "textoNoticia": "Las otras dos variantes se mantienen por el momento controladas y hasta la fecha solo se han detectado dos casos de la sudafricana y una de la brasileña. Que son los tres mismos casos de los que se tenía constancia la semana pasada"
+        },
+        {
+            "id": 2,
+            "titulo": "Osakidetza permitira pedir cita online para vacunarse de coronavirus",
+            "imagen": "https://fotos01.deia.eus/2021/03/09/690x278/va0001.jpg",
+            "fecha": "2021-03-08",
+            "textoCortoNoticia": "A los mayores de 80 años se les seguira llamando por telefono para acudir a un centro de vacunacion",
+            "textoNoticia": "Personal de Puertos, de supermercados, fisioterapeutas  y conductores de transporte públicos son algunos de las profesiones a las que se les vacunará las próximas semanas. Osakidetza permitirá, según ha anunciado la consejera de Salud, Gotzone Gagardui, pedir cita para vacunarse a partir del miércoles. A los mayores de 80 años se les seguirá llamando por teléfono para acudir al punto de vacunación correspondiente."
+        },
+        {
+            "id": 3,
+            "titulo": "Un ataque informatico obliga al SEPE a suspender sus actividad en todo el estado",
+            "imagen": "https://fotos00.deia.eus/mmp/2021/03/09/690x278/paro.jpg",
+            "fecha": "2020-01-08",
+            "textoCortoNoticia": "Ha recibido un ciberataque que esta impidiendo acceder a su pagina web",
+            "textoNoticia": "El sistema informático del Servicio Público de Empleo Estatal (SEPE) ha recibido un 'ciberataque' que está impidiendo acceder a su página web, según han confirmado a Europa Press fuentes del Ministerio de Trabajo y Economía Social."
+        },
+        {
+            "id": 4,
+            "titulo": "Bilbao y Barakaldo acogen dos carrears de coches electricos conducidos por niños y jovenes",
+            "imagen": "https://fotos00.deia.eus/2021/03/09/690x278/coches-electricos-de-carreras.jpg",
+            "fecha": "2020-01-05",
+            "textoCortoNoticia": "El cicuito internacional GreenPower Iberia-Bridgestone promueve la movilidad eficiente y la innovacion entre los escolares",
+            "textoNoticia": "El próximo domingo en Bilbao y el 15 de enero en Barakaldo nueve equipos de niños y jóvenes entre los 9 y 25 años serán los protagonistas de dos carreras de coches eléctricos del circuito internacional Greenpower Iberia-Bridgestone."
+        }
+
+    ]
+}

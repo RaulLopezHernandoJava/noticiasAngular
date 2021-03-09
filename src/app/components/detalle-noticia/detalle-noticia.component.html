@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="card-container">
+    <div class="card">
+        <img class="card-img-top" src="{{noticia.imagen}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{noticia.titulo}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{noticia.textoCortoNoticia}}</h6>
+            <p class="card-text">{{noticia.textoNoticia}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Fecha Lanzamiento {{noticia.fecha}}</li>
+        </ul>
+        <div class="card-body">
+            <button type="button" routerLink="/home" class="btn btn-outline-dark">Volver al Listado de Noticias</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

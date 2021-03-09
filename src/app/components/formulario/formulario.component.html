@@ -1,0 +1,56 @@
+<app-header></app-header>
+<form #formulario class="needs-validation" [class.was-validated]="validado" novalidate>
+    <div class="form-group row">
+        <label for="nombre" class="col-sm-2 col-form-label">Titulo</label>
+        <div class="col-sm-10">
+            <input pattern="[A-Za-z]{2,50}" [(ngModel)]="noticia.titulo" placeholder="Titulo" name="titulo" type="text" class="form-control" required>
+            <div class="invalid-feedback">
+                El titulo del libro tiene que tener una longitud entre 2 y 50 caracteres
+            </div>
+        </div>
+
+    </div>
+    <div class="form-group row">
+        <label for="imagen" class="col-sm-2 col-form-label">Imagen</label>
+        <div class="col-sm-10">
+            <input pattern="(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)" [(ngModel)]="noticia.imagen" placeholder="Inserte la URL de su imagen" name="imagen" type="text" class="form-control" required>
+            <div class="invalid-feedback">
+                El texto introducido no es una URL valida para la foto
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="fecha" class="col-sm-2 col-form-label">Fecha</label>
+        <div class="col-sm-10">
+            <input [(ngModel)]="noticia.fecha" type="date" placeholder="fecha" name="fecha" class="form-control" required>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="textoCortoNoticia" class="col-sm-2 col-form-label">Breve Resumen Noticia</label>
+        <div class="col-sm-10">
+            <input pattern="[A-Za-z]{2,200}" [(ngModel)]="noticia.textoCortoNoticia" placeholder="Inserte breve resumen de la noticia" name="textoCortoNoticia" type="text" class="form-control" required>
+            <div class="invalid-feedback">
+                El resumen de la noticia no puede ser mas largo de 200 caracteres
+            </div>
+        </div>
+
+    </div>
+    <div class="form-group row">
+        <label for="textoNoticia" class="col-sm-2 col-form-label">Texto Noticia</label>
+        <div class="col-sm-10">
+            <input pattern="[A-Za-z]{2,1500}" [(ngModel)]="noticia.textoNoticia" placeholder="Inserte el texto de la noticia" name="textoNoticia" type="text" class="form-control" required>
+            <div class="invalid-feedback">
+                El tamaño de la noticia tiene que ir de 2 a 1500 caracteres
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="button" (click)="btnAceptar(formulario.checkValidity())" class="btn btn-outline-primary">Aceptar</button>
+            <button type="button" routerLink="/home" class="btn btn-outline-danger">Cancelar</button>
+        </div>
+    </div>
+</form>
+<app-footer></app-footer>

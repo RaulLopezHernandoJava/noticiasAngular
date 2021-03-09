@@ -1,7 +1,19 @@
+import { DetalleNoticiaComponent } from './components/detalle-noticia/detalle-noticia.component';
+import { HomeComponent } from './components/home/home.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+
+
+const routes: Routes = [
+  {path: '',redirectTo: '/home',pathMatch: 'full'},
+  { path: 'home', component: HomeComponent },
+  { path: 'formulario', component: FormularioComponent },
+  { path: 'detalle/detalleNoticia/:id', component: DetalleNoticiaComponent },
+
+  // {path:'**',component:ErrorComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
