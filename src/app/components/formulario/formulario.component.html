@@ -3,7 +3,7 @@
     <div class="form-group row">
         <label for="nombre" class="col-sm-2 col-form-label">Titulo</label>
         <div class="col-sm-10">
-            <input pattern="[A-Za-z]{2,50}" [(ngModel)]="noticia.titulo" placeholder="Titulo" name="titulo" type="text" class="form-control" required>
+            <input pattern="[a-zA-Z0-9]+" [(ngModel)]="noticia.titulo" placeholder="Titulo" name="titulo" type="text" class="form-control" required>
             <div class="invalid-feedback">
                 El titulo del libro tiene que tener una longitud entre 2 y 50 caracteres
             </div>
@@ -28,7 +28,7 @@
     <div class="form-group row">
         <label for="textoCortoNoticia" class="col-sm-2 col-form-label">Breve Resumen Noticia</label>
         <div class="col-sm-10">
-            <input pattern="[A-Za-z]{2,200}" [(ngModel)]="noticia.textoCortoNoticia" placeholder="Inserte breve resumen de la noticia" name="textoCortoNoticia" type="text" class="form-control" required>
+            <input pattern="[a-zA-Z0-9]+" [(ngModel)]="noticia.textoCortoNoticia" placeholder="Inserte breve resumen de la noticia" name="textoCortoNoticia" type="text" class="form-control" required>
             <div class="invalid-feedback">
                 El resumen de la noticia no puede ser mas largo de 200 caracteres
             </div>
@@ -38,7 +38,7 @@
     <div class="form-group row">
         <label for="textoNoticia" class="col-sm-2 col-form-label">Texto Noticia</label>
         <div class="col-sm-10">
-            <input pattern="[A-Za-z]{2,1500}" [(ngModel)]="noticia.textoNoticia" placeholder="Inserte el texto de la noticia" name="textoNoticia" type="text" class="form-control" required>
+            <input pattern="[a-zA-Z0-9]+" [(ngModel)]="noticia.textoNoticia" placeholder="Inserte el texto de la noticia" name="textoNoticia" type="text" class="form-control" required>
             <div class="invalid-feedback">
                 El tamaño de la noticia tiene que ir de 2 a 1500 caracteres
             </div>

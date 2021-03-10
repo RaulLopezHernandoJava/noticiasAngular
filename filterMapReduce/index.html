@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+</body>
+
+<script>
+    // FILTER
+
+
+    let MisCervezas = [{
+        "nombre": "Erdinger",
+        capacidad: 500
+    }, {
+        "nombre": "Delirium",
+        capacidad: 300
+    }, {
+        "nombre": "Diosa Blanca",
+        capacidad: 700
+    }, {
+        "nombre": "Caguama",
+        capacidad: 1500
+    }, {
+        "nombre": "Fuller",
+        capacidad: 500
+    }, ];
+
+
+    // Ejemplo 1 - Filter regresa una lista
+    // Aqui devuelce un arreglo de las cervezas con capacidad mayor a 500
+
+    let MisCervezasGrandes = MisCervezas.filter(e => e.capacidad > 500);
+    console.log(MisCervezasGrandes);
+
+    // Ejemplo Filter 2 - Filtramos por productos baratos
+
+    const productos1 = [{
+        id: 'sjhadkjshhdkksjhad45',
+        nombre: 'Camiseta',
+        precio: 500
+    }, {
+        id: 'sjhadkjssahdkksjhad22',
+        nombre: 'Zapatillas',
+        precio: 2000
+    }, {
+        id: 'sjhadkjshhdkksjhad78',
+        nombre: 'Pantalon',
+        precio: 1500
+    }, ]
+
+
+    // Tanto "esBarato" como "esCaro" son predicados  que deberemos pasarle a filter
+
+    const esBarato = producto => producto.precio < 1000;
+    const esCaro = producto => !esBarato(producto);
+
+    const productosBaratos = productos.filter(esBarato)
+    const productosCaros = productos.filter(esCaro);
+
+    //Ejemplo Filter 3
+
+    const numeros = [1, 2, 3, 4, 3, 1]
+    const numerosUnicos = numeros.filter((numero, posicion, numeros) => {
+        return posicion === numeros.indexOf(numero);
+    });
+
+    //Map - Utilizamos map cuando tenemos un array y queremos obtener un nuevo array de otra cosa
+
+    //EJEMPLO 1 -MAP
+
+    //Problema - Aqui no devuelve un arreglo con las cervezas quitandole 100 de capacidad a cada uno
+    // sino que devuelve un arreglo solo con las cantidades restando a 100 cada una
+    // Es decir, [400,200,600,1400,400]
+    let MisCervezasMaliciadas = MisCervezas.map(e => e.capacidad - 100);
+    console.log(MisCervezasMaliciadas);
+
+    // Solucion aqui ya si tenemos las cervezas con la reduccion. Necesitamos el Return
+    let MisCervezasMaliciadas2 = MisCervezas.map(e => {
+        e.capacidad -= 100
+        return e;
+    })
+    console.log(MisCervezasMaliciadas2);
+
+    //EJEMPLO 2 - MAP
+
+    const numeros = [3, 10, 20, 50];
+    // Lo que hacemos en el "Map" tiene que ser sincrono si o si
+    const dobles = numeros.map(function(numero) {
+        return numero * 2;
+    });
+
+    //Ejemplo 3 -Map
+
+    const productos2 = [{
+        id: 'sjhadkjshhdkksjhad45',
+        nombre: 'Camiseta',
+        precio: 500
+    }, {
+        id: 'sjhadkjssahdkksjhad22',
+        nombre: 'Zapatillas',
+        precio: 2000
+    }, {
+        id: 'sjhadkjshhdkksjhad78',
+        nombre: 'Pantalon',
+        precio: 1500
+    }, ]
+
+    const obtenerPrecio = productos2.map(function(producto) {
+
+        if (producto.precio < 1000) return producto;
+        return {
+            ...producto,
+            precio: producto.precio * 0.9
+        }
+
+    })
+
+    // Ejemplo 4 - Obtenemos en un array nuevo todos los ids de productos (En este ejemplo tenemos una arrow function super
+    // simplificada)
+    const idProductos = productos2.map(({
+        id
+    }) => id)
+
+
+
+    //REDUCE regresa solo UN VALOR NO LISTA (ACUMULAR)
+    //Un array con un valor inicial que va operando con todos los elementos. Tras operar con todos los elementos
+    // del array obtenemos un unico valor
+
+    // Ejemplo 1 - Reduce
+    // El 'acumulado' empieza en '0' porque asi se lo definimos y vamos sumando en el objeto 'sig' la capacidad
+    let totalCapacidadCervezas = MisCervezas.reduce(
+        (acumulado, sig) => acumulado + sig.capacidad, 0)
+    console.log(totalCapacidadCervezas);
+
+    //Ejemplo 2 - Reduce - El sumatorio de todos los numeros de un array
+
+    const numeros = [3, 10, 20, 50];
+
+    let totalNumeros = numeros.reduce((acumulador) => {
+        return acumulador + numero
+    }, 0)
+
+    //Tambien podemos escribirlo
+
+    const acumular = (acumulador, numero) => acumulador + numero;
+    let total = numeros.length > 0 ? numeros.reduce(acumular) : 0;
+
+    //El valor inicial ('0') es opcional. Si no lo ponemos coje el primer valor del array y lo suma con el segundo
+    // y asi sucesivamente. Hay que asegurarse de que ninguna posicion del array no este vacia o bien directamente
+    // que no este vacio porque sino cascara
+
+    // Ejemplo 3 Reduce (Reduce es tan potente  que podiamos escribir map o filter utilizando reduce)
+
+    const numeros = [71, 41, 19, 88, 3, 65]
+
+    // Se recibe un array como el acumulador
+    const acumularDobles = (acumulador, numero) => {
+            // acumulador.push(numero *2);
+            // Para no causar efectos secundarios
+            [...acumulador, numero * 2];
+            return acumulador;
+
+        }
+        // El valor inicial del acumulador sera un array vacio porque queremos obtener un array como resultado
+    const dobles = numeros.reduce(acumularDobles, [])
+
+    // Ejemplo final - Combinamos Map, Filter y Reduce
+
+    const productos3 = [{
+        id: 'sjhadkjshhdkksjhad45',
+        nombre: 'Camiseta',
+        precio: 500
+    }, {
+        id: 'sjhadkjssahdkksjhad22',
+        nombre: 'Zapatillas',
+        precio: 2000
+    }, {
+        id: 'sjhadkjshhdkksjhad78',
+        nombre: 'Pantalon',
+        precio: 1500
+    }, ]
+
+    const precioTotalProductosBaratos = productos.filter(esBarato).map(obtenerPrecio).reduce(acumular);
+</script>
+
+</html>

@@ -21,11 +21,19 @@ export class HomeComponent implements OnInit {
     this.cargarNoticias();
   }
 
+  // Obtener todas las noticias
 
   cargarNoticias(){
     this.noticiaService.obtenerTodasLasNoticias()
     .subscribe(noticiasRecibidas => this.noticias = noticiasRecibidas)
   }
 
+  // Eliminar Noticia
+
+  borrar(noticia: Noticia): void {
+    if (confirm('¿Estás seguro de que quieres eliminar la noticia ' + noticia.id)) {
+      this.noticiaService.delete(noticia.id).subscribe(this.cargarNoticias.bind(this))
+    }
+  }
 
 }

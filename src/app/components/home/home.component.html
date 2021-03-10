@@ -17,7 +17,10 @@
             </div>
             <div class="card-button">
                 <button type="button" routerLink="/detalle/detalleNoticia/{{noticia.id}}" class="btn btn-outline-dark">Detalle Noticia</button>
+                <button class="btn btn-primary" routerLink="/formulario/{{noticia.id}}">Editar</button>
+                <button class="btn btn-outline-danger" (click)="borrar(noticia)">Eliminar Noticia</button>
             </div>
+
         </div>
     </div>
 </div>

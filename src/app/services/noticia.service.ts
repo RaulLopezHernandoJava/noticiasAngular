@@ -45,6 +45,23 @@ export class NoticiaService {
     );
   }
 
+  //Borrar Noticia
+
+  delete(id: number): Observable<Noticia> {
+    return this.http.delete<Noticia>(this.urlBase + id, this.httpOptions).pipe(
+      catchError(this.gestionarError<Noticia>('delete', NOTICIA_VACIA))
+    );
+  }
+
+
+  //Actualizar Noticia
+
+  put(Noticia: Noticia): Observable<Noticia> {
+    return this.http.put<Noticia>(this.urlBase + Noticia.id, Noticia, this.httpOptions).pipe(
+      catchError(this.gestionarError<Noticia>('put', NOTICIA_VACIA))
+    );
+  }
+
 
 
   // Gestionar los errores de todos los metodos

@@ -1,0 +1,205 @@
+
+Sacar todas las categorias  http://localhost:3000/categorias/
+
+
+[
+  {
+    "id": 1,
+    "nombre": "Categoria1",
+    "descripcion": "Esta es la descripcion de la categoria 1"
+  },
+  {
+    "id": 2,
+    "nombre": "Categoria2",
+    "descripcion": "Esta es la descripcion de la categoria 2"
+  },
+  {
+    "id": 3,
+    "nombre": "Categoria3",
+    "descripcion": "Esta es la descripcion de la categoria 3"
+  }
+]
+
+
+
+Sacar todos los articles  http://localhost:3000/articles/
+
+[
+  {
+    "id": 1,
+    "title": "9788466664417",
+    "content": "Reina Roja",
+    "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+    "date": "2018-11-08",
+    "categoriaId": 1
+  },
+  {
+    "id": 2,
+    "title": "9788466664417",
+    "content": "Reina Roja",
+    "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+    "date": "2018-11-08",
+    "categoriaId": 2
+  },
+  {
+    "id": 3,
+    "title": "9788466664417",
+    "content": "Reina Roja",
+    "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+    "date": "2018-11-08",
+    "categoriaId": 3
+  },
+  {
+    "id": 4,
+    "title": "jdksad",
+    "content": "dsajd",
+    "image": "https://cronicaglobal.elespanol.com/uploads/s1/61/11/50/7/main-700b9bff30.jpeg",
+    "date": "2021-03-13",
+    "categoriaId": 1
+  }
+]
+
+
+
+
+
+
+
+
+
+
+Articulos de una categoria http://localhost:3000/categorias/1/articles
+
+
+[
+  {
+    "id": 1,
+    "title": "9788466664417",
+    "content": "Reina Roja",
+    "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+    "date": "2018-11-08",
+    "categoriaId": 1
+  },
+  {
+    "id": 4,
+    "title": "jdksad",
+    "content": "dsajd",
+    "image": "https://cronicaglobal.elespanol.com/uploads/s1/61/11/50/7/main-700b9bff30.jpeg",
+    "date": "2021-03-13",
+    "categoriaId": 1
+  }
+]
+
+
+
+
+Sacar Articulo con categoria http://localhost:3000/articles/1/?_expand=categoria
+
+
+{
+  "id": 1,
+  "title": "9788466664417",
+  "content": "Reina Roja",
+  "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+  "date": "2018-11-08",
+  "categoriaId": 1,
+  "categoria": {
+    "id": 1,
+    "nombre": "Categoria1",
+    "descripcion": "Esta es la descripcion de la categoria 1"
+  }
+}
+
+Sacar Categoria con Articulos  http://localhost:3000/categorias/1/?_embed=articles
+
+
+{
+  "id": 1,
+  "nombre": "Categoria1",
+  "descripcion": "Esta es la descripcion de la categoria 1",
+  "articles": [
+    {
+      "id": 1,
+      "title": "9788466664417",
+      "content": "Reina Roja",
+      "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+      "date": "2018-11-08",
+      "categoriaId": 1
+    },
+    {
+      "id": 4,
+      "title": "jdksad",
+      "content": "dsajd",
+      "image": "https://cronicaglobal.elespanol.com/uploads/s1/61/11/50/7/main-700b9bff30.jpeg",
+      "date": "2021-03-13",
+      "categoriaId": 1
+    }
+  ]
+}
+
+
+Busqueda por title  http://localhost:3000/articles?title=Platano
+
+[
+  {
+    "id": 1,
+    "title": "Platano",
+    "content": "Descripcion del platano",
+    "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+    "price": 30,
+    "date": "2016-11-08",
+    "categoriaId": 1
+  }
+]
+
+Articles cuyo precio es mayor de 25 http://localhost:3000/articles?price_gte=25
+
+
+[
+  {
+    "id": 1,
+    "title": "Platano",
+    "content": "Descripcion del platano",
+    "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+    "price": 30,
+    "date": "2016-11-08",
+    "categoriaId": 1
+  },
+  {
+    "id": 2,
+    "title": "Pera",
+    "content": "Descripcion de la pera",
+    "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+    "date": "2014-11-08",
+    "price": 100,
+    "categoriaId": 2
+  }
+]
+
+Artculos cuyo precio esta entre 25 y 40 http://localhost:3000/articles?price_gte=25&price_lte=40
+
+[
+  {
+    "id": 1,
+    "title": "Platano",
+    "content": "Descripcion del platano",
+    "image": "https://imagessl7.casadellibro.com/a/l/t5/17/9788466664417.jpg",
+    "price": 30,
+    "date": "2016-11-08",
+    "categoriaId": 1
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+

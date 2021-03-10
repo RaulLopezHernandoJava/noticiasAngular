@@ -23,7 +23,13 @@ export class FormularioComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.route.paramMap.subscribe(paramMap => {
+      this.id = +paramMap.get('id');
+      console.log(this.id);
+      if (this.id) {
+        this.noticiaService.obtenerNoticia(this.id).subscribe(noticia => this.noticia = noticia);
+      }
+    });
 
   }
 
@@ -32,12 +38,17 @@ export class FormularioComponent implements OnInit {
     this.validado = true;
 
     if(!esValido){
+      console.log("Hola")
       return;
     }
 
-    if(!this.id){
+    if(this.id){
+      this.noticiaService.put(this.noticia).subscribe(this.irAlHomeNoticias.bind(this));
+    }else{
       this.noticiaService.crearNoticia(this.noticia).subscribe(this.irAlHomeNoticias.bind(this));
     }
+
+
   }
 
   irAlHomeNoticias() {
